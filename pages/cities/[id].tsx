@@ -8,9 +8,10 @@ type CityPageProps = {
   id: string
   lat: number
   lng: number
+  zoom: number
 }
 
-const CityPage: NextPage<CityPageProps> = ({ id, lat, lng }) => {
+const CityPage: NextPage<CityPageProps> = ({ id, lat, lng, zoom }) => {
   return (
     <div>
       City: {id}
@@ -18,7 +19,7 @@ const CityPage: NextPage<CityPageProps> = ({ id, lat, lng }) => {
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_API_KEY as string }}
           defaultCenter={{ lat, lng }}
-          defaultZoom={13}
+          defaultZoom={zoom}
         />
       </div>
     </div>
@@ -46,13 +47,14 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     }
   }
 
-  const { lng, lat } = data
+  const { lng, lat, zoom } = data
 
   return {
     props: {
       id,
       lng,
       lat,
+      zoom,
     },
   }
 }

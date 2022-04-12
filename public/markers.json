@@ -1,0 +1,23 @@
+{
+  "paris": [],
+  "bangkok": [
+    {
+      "id": "bangkok.lumpiniPark",
+      "lat": 13.7314408286684,
+      "lng": 100.54161882836833,
+      "text": "Lumpini Park"
+    },
+    {
+      "id": "bangkok.benchakittiPark",
+      "lat": 13.731876,
+      "lng": 100.558625,
+      "text": "Benchakitti Park"
+    },
+    {
+      "id": "bangkok.empireTower",
+      "lat": 13.720862,
+      "lng": 100.530341,
+      "text": "Empire Tower"
+    }
+  ]
+}

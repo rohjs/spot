@@ -23,14 +23,17 @@ export function GoogleMap({
   onClick,
 }: GoogleMapProps) {
   const containerSize = useMemo(() => ({ height, width }), [height, width])
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY as string
+  const mapId = process.env.NEXT_PUBLIC_MAP_ID as string
 
   return (
     <div style={containerSize}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_API_KEY as string }}
+        bootstrapURLKeys={{ key: apiKey }}
         defaultCenter={{ lat, lng }}
         defaultZoom={zoom}
         onClick={onClick}
+        options={{ mapId }}
       >
         {markers.map((marker) => (
           <Marker key={marker.id} {...marker} />
